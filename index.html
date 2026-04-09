@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Spell | Premium Marketing</title>
+    
+    <!-- Link FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- GSAP for Smooth Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+    <!-- 1. LOADING SCREEN -->
+    <div id="loader">
+        <div id="loader-text" style="transition: opacity 0.1s ease-out;">Hello</div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <a href="#" class="logo-link"><img src="assets/creativespell logo/cs png design.jpg" alt="Creative Spell Logo" class="logo-img"></a>
+        <nav class="nav-links">
+            <a href="#hero">Home</a>
+            <a href="#work">Our Work</a>
+            <a href="#strength">Our Strength</a>
+            <a href="#clients">Our Clients</a>
+            <a href="#services">Our Services</a>
+        </nav>
+        <a href="mailto:sayhellotocreativespell@gmail.com" class="btn" style="text-decoration: none; display: flex; align-items: center; justify-content: center;">Reach Out</a>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section id="hero" class="section hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>We don’t make noise.<br><span class="t-neon">We make people stop.</span></h1>
+                <p class="hero-subtext">We turn attention into obsession, and brands into culture.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. WORK SECTION -->
+    <section id="work" class="section work-section">
+        <div class="container" style="padding-bottom: 2rem;">
+            <h2 class="title t-white reveal">Our <span class="t-purple">Work</span></h2>
+        </div>
+        
+        <div class="work-wrapper">
+            <!-- Project Cards -->
+            <div class="work-card">
+                <img src="assets/works/1.jpg" alt="The Family Man" class="work-img" loading="lazy">
+            </div>
+            <div class="work-card">
+                <img src="assets/works/2.jpg" alt="Dhadak 2" class="work-img" loading="lazy">
+            </div>
+            <div class="work-card">
+                <img src="assets/works/3.jpg" alt="MRS Desh" class="work-img" loading="lazy">
+            </div>
+            <div class="work-card">
+                <img src="assets/works/4.jpg" alt="Criminal Justice" class="work-img" loading="lazy">
+            </div>
+            <div class="work-card">
+                <img src="assets/works/5.jpg" alt="The Legend of Hanuman" class="work-img" loading="lazy">
+            </div>
+            <div class="work-card">
+                <img src="assets/works/6.jpg" alt="MF Gabru" class="work-img" loading="lazy">
+            </div>
+            <div class="work-card">
+                <img src="assets/works/7.jpg" alt="Rangeen" class="work-img" loading="lazy">
+            </div>
+            <div class="work-card">
+                <img src="assets/works/8.jpg" alt="Hisaab Barabar" class="work-img" loading="lazy">
+            </div>
+            <div class="work-card">
+                <img src="assets/works/9.jpg" alt="Your Fault" class="work-img" loading="lazy">
+            </div>
+            <div class="work-card">
+                <img src="assets/works/10.jpg" alt="Mismatched" class="work-img" loading="lazy">
+            </div>
+            <div class="work-card">
+                <img src="assets/works/11.jpg" alt="Bhaiya Ji" class="work-img" loading="lazy">
+            </div>
+            <div class="work-card">
+                <img src="assets/works/12.jpg" alt="Sunflower" class="work-img" loading="lazy">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. STRENGTH SECTION -->
+    <section id="strength" class="section">
+        <div class="container">
+            <h2 class="title reveal">Our <span class="t-purple">Strength</span></h2>
+            <p class="section-subtext reveal">We don’t just create content.<br>We build ecosystems that move millions.</p>
+
+            <div class="strength-grid">
+                <div class="stat-card reveal">
+                    <div class="stat-icon"><i class="fa-brands fa-facebook"></i></div>
+                    <div class="stat-num"><span data-val="150">0</span><span>M+</span></div>
+                    <div class="stat-label">Facebook</div>
+                    <p class="stat-desc">Content that travels faster than algorithms.</p>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-icon"><i class="fa-brands fa-instagram"></i></div>
+                    <div class="stat-num"><span data-val="955">0</span><span>M+</span></div>
+                    <div class="stat-label">Instagram</div>
+                    <p class="stat-desc">Feeds we don’t just enter — we dominate.</p>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-icon"><i class="fa-brands fa-youtube"></i></div>
+                    <div class="stat-num"><span data-val="100">0</span><span>M+</span></div>
+                    <div class="stat-label">YouTube</div>
+                    <p class="stat-desc">Stories people don’t skip.</p>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-icon"><i class="fa-brands fa-linkedin"></i></div>
+                    <div class="stat-num"><span data-val="2500000" data-format="million">0</span><span>M+</span></div>
+                    <div class="stat-label">LinkedIn</div>
+                    <p class="stat-desc">Attention from the people who matter.</p>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-icon"><i class="fa-solid fa-people-group"></i></div>
+                    <div class="stat-num"><span data-val="50">0</span><span>K+</span></div>
+                    <div class="stat-label">Influencers</div>
+                    <p class="stat-desc">Voices that actually influence decisions.</p>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-icon"><i class="fa-brands fa-x-twitter"></i></div>
+                    <div class="stat-num"><span data-val="110">0</span><span>M+</span></div>
+                    <div class="stat-label">X</div>
+                    <p class="stat-desc">Conversations that turn into culture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CLIENTS SECTION -->
+    <section id="clients" class="clients-section">
+        <div class="container" style="padding-bottom: 2rem;">
+            <h2 class="title t-white reveal">Our <span class="t-purple">Clients</span></h2>
+        </div>
+        <div class="organic-marquee-wrapper">
+            <div class="organic-marquee-content">
+                <div class="client-floater delay-1"><div class="client-circle size-m"><img src="assets/clients/1.jpg" alt="Client 1" loading="lazy"></div></div>
+                <div class="client-floater delay-2"><div class="client-circle size-s"><img src="assets/clients/2.jpg" alt="Client 2" loading="lazy"></div></div>
+                <div class="client-floater delay-3"><div class="client-circle size-l"><img src="assets/clients/3.jpg" alt="Client 3" loading="lazy"></div></div>
+                <div class="client-floater delay-4"><div class="client-circle size-m"><img src="assets/clients/4.jpg" alt="Client 4" loading="lazy"></div></div>
+                <div class="client-floater delay-5"><div class="client-circle size-s"><img src="assets/clients/5.jpg" alt="Client 5" loading="lazy"></div></div>
+                <div class="client-floater delay-1"><div class="client-circle size-l"><img src="assets/clients/6.jpg" alt="Client 6" loading="lazy"></div></div>
+                <div class="client-floater delay-2"><div class="client-circle size-m"><img src="assets/clients/7.jpg" alt="Client 7" loading="lazy"></div></div>
+                <div class="client-floater delay-3"><div class="client-circle size-s"><img src="assets/clients/8.jpg" alt="Client 8" loading="lazy"></div></div>
+
+                <div class="client-floater delay-5"><div class="client-circle size-m"><img src="assets/clients/10.jpg" alt="Client 10" loading="lazy"></div></div>
+                <div class="client-floater delay-1"><div class="client-circle size-s"><img src="assets/clients/11.jpg" alt="Client 11" loading="lazy"></div></div>
+                <div class="client-floater delay-2"><div class="client-circle size-l"><img src="assets/clients/12.jpg" alt="Client 12" loading="lazy"></div></div>
+                <div class="client-floater delay-3"><div class="client-circle size-m"><img src="assets/clients/13.jpg" alt="Client 13" loading="lazy"></div></div>
+            </div>
+            <!-- Duplicate for infinite effect -->
+            <div class="organic-marquee-content">
+                <div class="client-floater delay-1"><div class="client-circle size-m"><img src="assets/clients/1.jpg" alt="Client 1" loading="lazy"></div></div>
+                <div class="client-floater delay-2"><div class="client-circle size-s"><img src="assets/clients/2.jpg" alt="Client 2" loading="lazy"></div></div>
+                <div class="client-floater delay-3"><div class="client-circle size-l"><img src="assets/clients/3.jpg" alt="Client 3" loading="lazy"></div></div>
+                <div class="client-floater delay-4"><div class="client-circle size-m"><img src="assets/clients/4.jpg" alt="Client 4" loading="lazy"></div></div>
+                <div class="client-floater delay-5"><div class="client-circle size-s"><img src="assets/clients/5.jpg" alt="Client 5" loading="lazy"></div></div>
+                <div class="client-floater delay-1"><div class="client-circle size-l"><img src="assets/clients/6.jpg" alt="Client 6" loading="lazy"></div></div>
+                <div class="client-floater delay-2"><div class="client-circle size-m"><img src="assets/clients/7.jpg" alt="Client 7" loading="lazy"></div></div>
+                <div class="client-floater delay-3"><div class="client-circle size-s"><img src="assets/clients/8.jpg" alt="Client 8" loading="lazy"></div></div>
+
+                <div class="client-floater delay-5"><div class="client-circle size-m"><img src="assets/clients/10.jpg" alt="Client 10" loading="lazy"></div></div>
+                <div class="client-floater delay-1"><div class="client-circle size-s"><img src="assets/clients/11.jpg" alt="Client 11" loading="lazy"></div></div>
+                <div class="client-floater delay-2"><div class="client-circle size-l"><img src="assets/clients/12.jpg" alt="Client 12" loading="lazy"></div></div>
+                <div class="client-floater delay-3"><div class="client-circle size-m"><img src="assets/clients/13.jpg" alt="Client 13" loading="lazy"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. SERVICES SECTION -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="title reveal">Our <span class="t-neon">Services</span></h2>
+
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="svc-icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <h3 class="t-white">Full-Funnel Campaigns</h3>
+                    <p>From first scroll to final sale — we design journeys that convert.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="svc-icon"><i class="fa-solid fa-masks-theater"></i></div>
+                    <h3 class="t-white">Meme Marketing</h3>
+                    <p>Not just funny. Strategically viral.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="svc-icon"><i class="fa-solid fa-hashtag"></i></div>
+                    <h3 class="t-white">Social Media Marketing</h3>
+                    <p>We don’t grow pages. We build communities.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="svc-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                    <h3 class="t-white">Content Creation & Management</h3>
+                    <p>Content that looks good. Performs even better.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="svc-icon"><i class="fa-solid fa-people-group"></i></div>
+                    <h3 class="t-white">Influencer Marketing</h3>
+                    <p>Right creators. Real impact.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="svc-icon"><i class="fa-solid fa-video"></i></div>
+                    <h3 class="t-white">Video Production</h3>
+                    <p>Scroll-stopping visuals that tell stories.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="svc-icon"><i class="fa-solid fa-ticket"></i></div>
+                    <h3 class="t-white">Film & OTT Promotions</h3>
+                    <p>We don’t launch content. We create hype.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="svc-icon"><i class="fa-solid fa-newspaper"></i></div>
+                    <h3 class="t-white">PR & News Publicity</h3>
+                    <p>Control the narrative. Own the spotlight.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="svc-icon"><i class="fa-solid fa-music"></i></div>
+                    <h3 class="t-white">Music Marketing</h3>
+                    <p>Turn tracks into trends.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. CTA SECTION -->
+    <section id="cta" class="section" style="text-align: center; padding-top: 10vh; padding-bottom: 8vh;">
+        <div class="container">
+            <h2 class="title reveal">Ready to <span class="t-purple">Cast Your Spell?</span></h2>
+            <p class="section-subtext reveal" style="margin-top: 1.5rem; font-size: 1.2rem; color: var(--c-text-muted);">
+                Turn your ideas into content that actually moves people.
+            </p>
+            <h3 class="reveal t-neon" style="font-size: 1.8rem; font-weight: 700; margin: 1.5rem 0 3.5rem;">
+                We don’t just create — we make it spread.
+            </h3>
+            
+            <div class="reveal">
+                <a href="mailto:sayhellotocreativespell@gmail.com" class="btn btn-cta">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <div class="footer-brand">
+                    <img src="assets/creativespell logo/cs png design.jpg" alt="Creative Spell Logo" class="footer-logo">
+                    <div class="footer-info">
+                        <strong>Creative Spell</strong>
+                        <span>Bhopal, Madhya Pradesh, India</span>
+                        <a href="mailto:sayhellotocreativespell@gmail.com" class="t-neon">sayhellotocreativespell@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-right">
+                <h4 class="t-white" style="margin-bottom: 1.2rem; font-size: 1.3rem; font-weight: 600;">Find Us Online</h4>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/creativespell.in" target="_blank" class="footer-social-link"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/the-creative-spell-network/" target="_blank" class="footer-social-link"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="mailto:sayhellotocreativespell@gmail.com" class="footer-social-link"><i class="fa-regular fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>All Rights Reserved &copy; 2026 Creative Spell</p>
+        </div>
+    </footer>
+
+    <!-- External Script JS -->
+    <script src="script.js"></script>
+</body>
+</html>

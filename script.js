@@ -1,4 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
+    /* ─── NAVBAR HIDE/SHOW ON SCROLL ─── */
+    let lastScrollY = window.scrollY;
+    const header = document.querySelector("header");
+
+    if (header) {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                header.classList.add("nav-hidden");
+            } else {
+                header.classList.remove("nav-hidden");
+            }
+            lastScrollY = window.scrollY;
+        }, { passive: true });
+    }
+
     /* ─── MULTILINGUAL LOADER ─── */
     const loader = document.getElementById("loader");
     const loaderText = document.getElementById("loader-text");
@@ -36,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         gsap.registerPlugin(ScrollTrigger);
 
         // 1. Hero Reveal
-        const tlHero = gsap.timeline();
+        const tlHero = gsap.timeline({ defaults: { force3D: true } });
         tlHero.fromTo(".hero-bg", { opacity: 0 }, { opacity: 0.5, duration: 2, ease: "power2.out" }, 0)
               .fromTo(".hero h1", { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power3.out" }, 0.2)
               .fromTo(".hero p", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power3.out" }, 0.4);
@@ -61,11 +76,12 @@ document.addEventListener("DOMContentLoaded", () => {
             gsap.to(workWrapper, {
                 x: () => -(workWrapper.scrollWidth - window.innerWidth + window.innerWidth * 0.04), // 4vw padding
                 ease: "none",
+                force3D: true,
                 scrollTrigger: {
                     trigger: ".work-section",
                     pin: true,
-                    scrub: 1,
-                    // The end value defines how long the scroll lasts
+                    scrub: 0.5, // Reduced from 1 for snappier feedback
+                    invalidateOnRefresh: true,
                     end: () => "+=" + workWrapper.scrollWidth
                 }
             });
@@ -88,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         val: targetValue,
                         duration: 2, 
                         ease: "power2.out",
+                        force3D: true,
                         onUpdate: function() {
                             if (formatMillion) {
                                 counter.innerHTML = (proxy.val / 1000000).toFixed(1);
@@ -110,6 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     opacity: 1,
                     duration: 0.8,
                     ease: "power2.out",
+                    force3D: true,
                     scrollTrigger: {
                         trigger: elem,
                         start: "top 85%",

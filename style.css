@@ -44,6 +44,7 @@ body {
   -webkit-font-smoothing: antialiased;
   line-height: 1.5;
   cursor: default;
+  padding-top: 80px; /* Offset for fixed header */
 }
 
 img {
@@ -159,7 +160,18 @@ header {
   align-items: center;
   z-index: 1000;
   mix-blend-mode: difference;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+  will-change: transform;
 }
+
+.nav-hidden {
+  transform: translateY(-100%);
+}
+
+/* On desktop, show a subtle background when scrolling starts for readability if needed, 
+   though mix-blend-mode: difference usually handles it. 
+   Keeping it clean as per original design. */
+
 
 .logo-img {
   max-height: 40px; 
@@ -277,6 +289,8 @@ header {
   object-fit: cover;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s;
   filter: grayscale(100%) brightness(0.7);
+  will-change: transform, filter;
+  transform: translateZ(0);
 }
 
 /* Clean image + title only layout */
@@ -399,6 +413,7 @@ header {
   width: max-content;
   animation: organicMarquee 15s linear infinite; /* Slightly faster */
   will-change: transform;
+  transform: translateZ(0); /* Hardware acceleration */
 }
 
 .organic-marquee-wrapper:hover {
@@ -427,6 +442,7 @@ header {
 .client-floater {
   animation: floatOrganic 5s ease-in-out infinite;
   will-change: transform;
+  transform: translate3d(0, 0, 0); /* Hardware acceleration */
 }
 
 /* Scatter layout via margins to avoid strict grid */
@@ -452,6 +468,8 @@ header {
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
   cursor: default;
   overflow: hidden;
+  will-change: transform, box-shadow;
+  transform: translateZ(0);
 }
 
 /* Hover Interaction */
@@ -546,11 +564,12 @@ header {
   color: var(--c-white);
   font-weight: 700;
   letter-spacing: 1px;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.4s, color 0.4s, border-color 0.4s;
   display: inline-block;
   text-decoration: none;
   box-shadow: 0 10px 30px rgba(106, 0, 255, 0.3);
   border: 2px solid transparent;
+  will-change: transform, box-shadow;
 }
 
 .btn-cta:hover {
@@ -678,6 +697,7 @@ header {
 }
 
 @media (max-width: 768px) {
+  body { padding-top: 70px; } /* Slightly smaller offset for mobile */
   .work-card { width: 300px; height: 400px; }
   .stat-card { padding: 2rem; }
   .client-logo { height: 60px; }

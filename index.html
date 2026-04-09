@@ -19,6 +19,10 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
     
+    <!-- Performance Prioritization -->
+    <link rel="preload" as="image" href="assets/creativespell logo/cs png design.jpg">
+    <link rel="preload" as="image" href="assets/works/1.jpg">
+
     <!-- GSAP for Smooth Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -32,7 +36,7 @@
 
     <!-- HEADER -->
     <header>
-        <a href="#" class="logo-link"><img loading="lazy" decoding="async" src="assets/creativespell logo/cs png design.jpg" alt="Creative Spell Logo" class="logo-img"></a>
+        <a href="#" class="logo-link"><img loading="eager" fetchpriority="high" decoding="async" src="assets/creativespell logo/cs png design.jpg" alt="Creative Spell Logo" class="logo-img" width="160" height="auto"></a>
         <nav class="nav-links">
             <a href="#hero">Home</a>
             <a href="#work">Our Work</a>
@@ -63,7 +67,7 @@
         <div class="work-wrapper">
             <!-- Project Cards -->
             <div class="work-card">
-                <img loading="lazy" decoding="async" src="assets/works/1.jpg" alt="The Family Man" class="work-img">
+                <img loading="eager" fetchpriority="high" decoding="async" src="assets/works/1.jpg" alt="The Family Man" class="work-img" width="1000" height="auto">
             </div>
             <div class="work-card">
                 <img loading="lazy" decoding="async" src="assets/works/2.jpg" alt="Dhadak 2" class="work-img">
@@ -156,7 +160,7 @@
         </div>
         <div class="organic-marquee-wrapper">
             <div class="organic-marquee-content">
-                <div class="client-floater delay-1"><div class="client-circle size-m"><img loading="lazy" decoding="async" src="assets/clients/1.jpg" alt="Client 1"></div></div>
+                <div class="client-floater delay-1"><div class="client-circle size-m"><img loading="lazy" decoding="async" src="assets/clients/1.jpg" alt="Client 1" width="300" height="auto"></div></div>
                 <div class="client-floater delay-2"><div class="client-circle size-s"><img loading="lazy" decoding="async" src="assets/clients/2.jpg" alt="Client 2"></div></div>
                 <div class="client-floater delay-3"><div class="client-circle size-l"><img loading="lazy" decoding="async" src="assets/clients/3.jpg" alt="Client 3"></div></div>
                 <div class="client-floater delay-4"><div class="client-circle size-m"><img loading="lazy" decoding="async" src="assets/clients/4.jpg" alt="Client 4"></div></div>
@@ -172,7 +176,7 @@
             </div>
             <!-- Duplicate for infinite effect -->
             <div class="organic-marquee-content">
-                <div class="client-floater delay-1"><div class="client-circle size-m"><img loading="lazy" decoding="async" src="assets/clients/1.jpg" alt="Client 1"></div></div>
+                <div class="client-floater delay-1"><div class="client-circle size-m"><img loading="lazy" decoding="async" src="assets/clients/1.jpg" alt="Client 1" width="300" height="auto"></div></div>
                 <div class="client-floater delay-2"><div class="client-circle size-s"><img loading="lazy" decoding="async" src="assets/clients/2.jpg" alt="Client 2"></div></div>
                 <div class="client-floater delay-3"><div class="client-circle size-l"><img loading="lazy" decoding="async" src="assets/clients/3.jpg" alt="Client 3"></div></div>
                 <div class="client-floater delay-4"><div class="client-circle size-m"><img loading="lazy" decoding="async" src="assets/clients/4.jpg" alt="Client 4"></div></div>

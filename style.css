@@ -98,6 +98,8 @@ a {
 .section {
   padding: 15vh 0;
   position: relative;
+  content-visibility: auto;
+  contain-intrinsic-size: 100vh 1000px;
 }
 
 h2.title {

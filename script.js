@@ -80,8 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 scrollTrigger: {
                     trigger: ".work-section",
                     pin: true,
-                    scrub: 0.5, // Reduced from 1 for snappier feedback
+                    scrub: 0.5,
                     invalidateOnRefresh: true,
+                    anticipatePin: 1,
                     end: () => "+=" + workWrapper.scrollWidth
                 }
             });

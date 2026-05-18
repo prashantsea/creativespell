@@ -4,9 +4,8 @@
    Typography: Inter (Clean, Modern, Global)
 ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap');
-
 :root {
+  --float-y: -15px;
   --c-black: #000000;
   --c-white: #FFFFFF;
   --c-neon: #D9FF00;
@@ -274,6 +273,7 @@ header {
   padding-left: 4vw;
   padding-bottom: 20px;
   align-items: center;
+  will-change: transform;
 }
 
 .work-card {
@@ -290,6 +290,17 @@ header {
   align-items: center;
   justify-content: center;
   transform: translateZ(0);
+}
+
+.work-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  transition: var(--tr-smooth);
+  pointer-events: none;
+  z-index: 20;
 }
 
 .work-img {
@@ -338,6 +349,22 @@ header {
   }
 }
 
+/* Mobile Touch Active (triggered by JS intersection observer or scroll center) */
+.work-card.touch-active .work-img {
+  transform: scale(1.05) translateZ(0);
+  filter: grayscale(0%) brightness(1);
+}
+
+.work-card.touch-active::after {
+  border-color: var(--c-purple);
+  box-shadow: inset 0 0 40px rgba(106, 0, 255, 0.3);
+}
+
+.work-card.touch-active .work-info {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 /* ─── STRENGTH SECTION ─── */
 .strength-grid {
   display: grid;
@@ -379,6 +406,14 @@ header {
     background: #1f1f1f;
     box-shadow: 0 15px 30px rgba(0,0,0,0.5);
   }
+}
+
+/* Touch active for stat cards */
+.stat-card.touch-active, .stat-card:active {
+  border-left-color: var(--c-neon);
+  transform: translateY(-4px) translateZ(0);
+  background: #1f1f1f;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
 
 .stat-icon {
@@ -452,7 +487,7 @@ header {
 /* Floating animation */
 @keyframes floatOrganic {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  50% { transform: translateY(var(--float-y)); }
 }
 
 .client-floater {
@@ -525,12 +560,6 @@ header {
   .client-floater:nth-child(even) { margin-top: 30px; }
   .client-floater:nth-child(3n) { margin-bottom: 40px; margin-right: 10px; }
   .client-floater:nth-child(5n) { margin-top: -20px; margin-left: 15px; }
-
-  /* Reduce float animation slightly */
-  @keyframes floatOrganic {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
 }
 
 /* ─── SERVICES SECTION ─── */
@@ -595,6 +624,19 @@ header {
   }
 }
 
+/* Touch active for service cards */
+.service-card.touch-active, .service-card:active {
+  background-color: var(--c-gray);
+  border-color: var(--c-purple);
+  box-shadow: 0 10px 30px rgba(106, 0, 255, 0.1), inset 0 0 15px rgba(217, 255, 0, 0.02);
+  transform: translateY(-4px) translateZ(0);
+}
+
+.service-card.touch-active .svc-icon, .service-card:active .svc-icon {
+  transform: scale(1.08) translateZ(0);
+  background: rgba(217, 255, 0, 0.1);
+}
+
 .service-card h3 {
   font-size: 1.4rem;
   font-weight: 800;
@@ -637,6 +679,22 @@ header {
   border-color: var(--c-neon);
   transform: translateY(-5px) scale(1.05);
   box-shadow: 0 15px 40px rgba(217, 255, 0, 0.2);
+}
+
+/* Button Touch Active States */
+.btn:active {
+  background-color: var(--c-purple);
+  color: var(--c-white);
+  box-shadow: 0 0 20px rgba(106, 0, 255, 0.3);
+  transform: translateY(2px);
+}
+
+.btn-cta:active {
+  background-color: transparent;
+  color: var(--c-neon);
+  border-color: var(--c-neon);
+  transform: translateY(2px) scale(0.98);
+  box-shadow: 0 5px 15px rgba(217, 255, 0, 0.15);
 }
 
 /* ─── FOOTER ─── */
@@ -756,10 +814,29 @@ header {
 }
 
 @media (max-width: 768px) {
-  body { padding-top: 90px; } /* Slightly smaller offset for mobile */
-  .logo-img { height: 56px; }
-  .work-card { width: 300px; height: 400px; }
-  .stat-card { padding: 2rem; }
+  :root {
+    --float-y: -8px;
+  }
+  body { padding-top: 92px; } /* Exactly header height: 60px logo + 2rem mobile padding */
+  header { padding: 1rem 4vw; } /* Reduced padding on mobile to prevent massive header space */
+  .logo-img { height: 60px; }
+  .section { padding: 8vh 0; } /* Tighter, more elegant mobile spacing */
+  .hero h1 { font-size: clamp(2.5rem, 10vw, 4rem); line-height: 1; }
+  .hero-subtext { margin-top: 1rem; }
+  
+  .work-card { width: 280px; height: 380px; margin-right: 20px; }
+  .work-wrapper { padding-left: 5vw; padding-bottom: 30px; }
+  
+  .strength-grid { gap: 1.5rem; }
+  .stat-card { padding: 2rem 1.5rem; }
+  
+  .services-grid { gap: 1.5rem; }
+  .service-card { padding: 2.5rem 1.5rem; }
+  
   .client-logo { height: 60px; }
   .social-link { font-size: 2.5rem; gap: 1.5rem; }
+  
+  .btn-cta { padding: 1rem 2.5rem; font-size: 1rem; }
+  
+  .organic-marquee-content { gap: 1.5rem; padding-right: 1.5rem; }
 }

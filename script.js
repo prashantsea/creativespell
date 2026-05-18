@@ -82,7 +82,33 @@ document.addEventListener("DOMContentLoaded", () => {
                     scrub: 0.5,
                     invalidateOnRefresh: true,
                     anticipatePin: 1,
-                    end: () => "+=" + workWrapper.scrollWidth
+                    end: () => "+=" + workWrapper.scrollWidth,
+                    onUpdate: () => {
+                        if (window.matchMedia("(hover: none)").matches || window.innerWidth <= 768) {
+                            const viewportCenter = window.innerWidth / 2;
+                            let closestCard = null;
+                            let minDistance = Infinity;
+                            
+                            cards.forEach(card => {
+                                const rect = card.getBoundingClientRect();
+                                const cardCenter = rect.left + rect.width / 2;
+                                const distance = Math.abs(viewportCenter - cardCenter);
+                                
+                                if (distance < minDistance) {
+                                    minDistance = distance;
+                                    closestCard = card;
+                                }
+                            });
+                            
+                            cards.forEach(card => {
+                                if (card === closestCard) {
+                                    card.classList.add("touch-active");
+                                } else {
+                                    card.classList.remove("touch-active");
+                                }
+                            });
+                        }
+                    }
                 }
             });
         }

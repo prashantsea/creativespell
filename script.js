@@ -1,16 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
     /* ─── NAVBAR HIDE/SHOW ON SCROLL ─── */
-    let lastScrollY = window.scrollY;
     const header = document.querySelector("header");
 
     if (header) {
         window.addEventListener("scroll", () => {
-            if (window.scrollY > lastScrollY && window.scrollY > 100) {
+            if (window.scrollY > 50) {
                 header.classList.add("nav-hidden");
             } else {
                 header.classList.remove("nav-hidden");
             }
-            lastScrollY = window.scrollY;
         }, { passive: true });
     }
 
@@ -60,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         gsap.to(".hero-bg", {
             yPercent: 30,
             ease: "none",
+            force3D: true,
             scrollTrigger: {
                 trigger: ".hero",
                 start: "top top",
@@ -122,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const revealElements = gsap.utils.toArray('.reveal');
         revealElements.forEach(elem => {
             gsap.fromTo(elem, 
-                { y: 40, opacity: 0 },
+                { y: 30, opacity: 0 },
                 {
                     y: 0, 
                     opacity: 1,
@@ -131,8 +130,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     force3D: true,
                     scrollTrigger: {
                         trigger: elem,
-                        start: "top 85%",
-                        toggleActions: "play none none reverse"
+                        start: "top 90%", // Trigger slightly earlier to prevent lag
+                        once: true // Play ONLY once and don't reverse
                     }
                 }
             );
